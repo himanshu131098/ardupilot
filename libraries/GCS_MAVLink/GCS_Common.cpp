@@ -2339,8 +2339,8 @@ void GCS_MAVLINK::send_autopilot_version() const
     
     uint32_t uuid_words[4];
     
-    uuid_words[0] = getreg32(0x420);
-    uuid_words[1] = getreg32(0x410);
+    __asm__ __volatile__("\tldr %0, [%1]\n\t" : "=r"( uuid_words[0]) : "r"(0x420));
+    __asm__ __volatile__("\tldr %0, [%1]\n\t" : "=r"( uuid_words[0]) : "r"(0x410));
     
     uid = (((uint64_t)uuid_words[1]) << 32) | uuid_words[2]; 
 
