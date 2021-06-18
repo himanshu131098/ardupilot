@@ -2337,7 +2337,7 @@ void GCS_MAVLINK::send_autopilot_version() const
     uint64_t uid = 0;
     uint8_t  uid2[MAVLINK_MSG_AUTOPILOT_VERSION_FIELD_UID2_LEN] = {0};
     
-    uint32_t uuid_words[4];
+    uint32_t uuid_words[3];
     
     //     Version-1 for UID
     //     __asm__ __volatile__("\tldr %0, [%1]\n\t" : "=r"( uuid_words[0]) : "r"(0x420));
