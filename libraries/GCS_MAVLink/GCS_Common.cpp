@@ -2339,11 +2339,6 @@ void GCS_MAVLINK::send_autopilot_version() const
     
     uint32_t uuid_words[3];
     
-    //     Version-1 for UID
-    //     __asm__ __volatile__("\tldr %0, [%1]\n\t" : "=r"( uuid_words[0]) : "r"(0x420));
-    //     __asm__ __volatile__("\tldr %0, [%1]\n\t" : "=r"( uuid_words[0]) : "r"(0x410));
-    
-    // Version-2 for UID
     uint32_t *chip_uuid = (uint32_t *) 0x1fff7a10;
 
 	for (unsigned i = 0; i < 3; i++) {
